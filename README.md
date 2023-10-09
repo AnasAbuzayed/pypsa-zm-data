@@ -16,7 +16,7 @@ To clone both forks to the correct locations on a local machine, the following c
 ```bash
 git clone https://github.com/<user-name>/pypsa-earth
 ```
-`<user-name>` must be replaced with the personal github-username.
+`<user-name>` must be replaced with your personal github-username.
 
 After that, one must change to the freshly created pypsa-earth repository.
 ```bash
@@ -26,11 +26,11 @@ and repeat the cloning, this time for the pypsa-kz-data repository.
 ```bash
 git clone https://github.com/<user-name>/pypsa-kz-data
 ```
-Again, `<user-name>` must be replaced with the personal github-username. At the end of this process, the following folder structure should have been created (where `<user-name>` is your personal github-username):
+Again, `<user-name>` must be replaced with your personal github-username. At the end of this process, the following folder structure should have been created (where `<user-name>` is your personal github-username):
 
 - `../<user-name>/pypsa-earth` that contains the pypsa-earth repository.
 
-- `../<user-name>/pypsa-earth/pypsa-zm-data` that contains the pypsa-zm-data repository. Note that this is inside the main directory of the pypsa-earth repository.
+- `../<user-name>/pypsa-earth/pypsa-zm-data` that contains the pypsa-zm-data repository. Note that this is inside the directory of the pypsa-earth repository.
 
 In order to install the pypsa-earth environment, instructions are provided in the pypsa-earth [documentation](https://pypsa-earth.readthedocs.io/en/latest/installation.html), see `Install dependencies` and `Python dependencies`. Note that you should be in the directory `../<user-name>/pypsa-earth` at the beginning this process.
 After installing the environment, activate it using
@@ -117,13 +117,9 @@ The Snakefile `zm.smk` defines the Snakemake rules that are specific for Zambia.
 
 Note that the code to execute those rules should be stored in the `scripts` folder, and called as a script in the Snakefile `zm.smk`. 
 
-# User Instructions
+# Acknowledgements
 
-TBD. This [issue](https://github.com/pypsa-meets-earth/pypsa-zm-data/issues/1) needs to be solved/ tested.
-
-# Acknowledgement
-
-Both projects are funded by the Climate Compatible Growth for the following projects:
+This projects is funded by the Climate Compatible Growth through the following projects:
 
 - [Macroeconomic implications of the Green Growth Strategy in Zambia](https://drive.google.com/file/d/1n9l50KhCGH4l07Kqsu1wiRGweubw0TYj/view?usp=sharing)
 - [Energy System Chef – The energy system implications of transitions to clean cooking in Zambia](https://drive.google.com/file/d/1Sgr3NXm2F5gEFea_qEvJ-OWaNmSAjHMx/view?usp=sharing)
