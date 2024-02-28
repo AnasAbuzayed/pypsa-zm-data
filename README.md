@@ -22,9 +22,9 @@ After that, one must change to the freshly created pypsa-earth repository.
 ```bash
 cd pypsa-earth/
 ```
-and repeat the cloning, this time for the pypsa-kz-data repository.
+and repeat the cloning, this time for the pypsa-zm-data repository.
 ```bash
-git clone https://github.com/<user-name>/pypsa-kz-data
+git clone https://github.com/<user-name>/pypsa-zm-data
 ```
 Again, `<user-name>` must be replaced with your personal github-username. At the end of this process, the following folder structure should have been created (where `<user-name>` is your personal github-username):
 
