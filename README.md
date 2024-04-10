@@ -1,6 +1,6 @@
 # pypsa-zm-data
 
-This repository mainly hosts data required to run energy system planning scenarions for Zambia within [PyPSA-Earth](https://github.com/pypsa-meets-earth/pypsa-earth). Hence, it is not a standalone repository, and needs to be executed in conjunction with PyPSA-Earth.
+This repository mostly hosts data required to run energy system planning scenarions for Zambia within [PyPSA-Earth](https://github.com/pypsa-meets-earth/pypsa-earth). Hence, it is not a standalone repository, and needs to be executed in conjunction with PyPSA-Earth.
 
  It also contains customised pieces of code to run those scenarios, instructions on how to run them, and validation notebooks for Zambia.
 
@@ -47,6 +47,40 @@ This step can optionally be skipped if the `data/` folder with all relevant subf
 
 Work in progress. See the [pypsa-kz-data](https://github.com/pypsa-meets-earth/pypsa-kz-data) repository for an example on how to do this.
 
+So far, we can feed pypsa-earth with an updated list of power plants from the [Energy Sector Report 2022](https://www.erb.org.zm/statistics) by the Energy Regulation Board.
+
+### 1. Copy a Configuration File for Zambia
+
+Configuration files for Zambia are stored in the `pypsa-zm-data/configs/` folder. The desired configuration file should be copied from that folder into the pypsa-earth directory with the name `config.yaml`.
+
+To do so in the terminal at the pypsa-earth directory you can type the following instruction:
+
+```bash
+...\pypsa-earth> cp pypsa-zm-data/configs/[desired config file] config.yaml
+```
+where `[desired config file]` can be any configuration file for Zambia. For instance, the default config for Zambia `config.zm-default.yaml`.
+
+The main changes introduced in the default config file for Zambia `config.zm-default.yaml` are:
+
+1. Remove `offwind-ac` and `offwind-dc` from `extendable_carriers` and `renewable_carriers`.
+
+2. Set up the option `replace` to `custom_powerplants`. This considers only the customized list of power plants in `pypsa-earth/data/custom_powerplants.csv` (see Section 2 below).
+
+### 2. Update the Zambian Powerplants
+
+An complete list of power plants in Zambia can be found in `pypsa-zm-data/data/powerplants_zm_all.csv`. This includes all power plants with installed capacity >= 1 MW from the [Energy Sector Report 2022](https://www.erb.org.zm/statistics) by the Energy Regulation Board.
+
+To execute the workflow with these power plants, two steps must be done:
+
+1. Copy the file `pypsa-zm-data/data/powerplants_zm_all.csv` to the folder `pypsa-earth/data` with the name `custom_powerplants.csv`.
+
+To do so from the terminal at the pypsa-earth directory you can type the following instruction:
+
+```bash
+...\pypsa-earth> cp pypsa-zm-data/data/powerplants_zm_all.csv data/custom_powerplants.csv
+```
+
+2. In the config file the workflow will execute (`pypsa-earth/config.yaml`) set the option `custom_powerplants` to `replace`. This makes the rule `build_powerplants` only use the powerplants from the file `custom_powerplants.csv`. See the [documentation](https://pypsa-earth.readthedocs.io/en/latest/populate/build_powerplants.html) of the rule `build_powerplants` for more details.
 
 # Repository Structure
 
